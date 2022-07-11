@@ -13,6 +13,8 @@
 		EA633F77287BA63400E5D023 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA633F75287BA63400E5D023 /* LaunchScreen.storyboard */; };
 		EA633F7F287BAD4800E5D023 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA633F7E287BAD4800E5D023 /* SearchViewController.swift */; };
 		EA633F81287BAD8500E5D023 /* FavoritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA633F80287BAD8500E5D023 /* FavoritesListViewController.swift */; };
+		EA633F83287CE4A300E5D023 /* GHFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA633F82287CE4A300E5D023 /* GHFButton.swift */; };
+		EA633F85287CE85900E5D023 /* GHFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA633F84287CE85900E5D023 /* GHFTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		EA633F78287BA63400E5D023 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA633F7E287BAD4800E5D023 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		EA633F80287BAD8500E5D023 /* FavoritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewController.swift; sourceTree = "<group>"; };
+		EA633F82287CE4A300E5D023 /* GHFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHFButton.swift; sourceTree = "<group>"; };
+		EA633F84287CE85900E5D023 /* GHFTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHFTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				EA633F78287BA63400E5D023 /* Info.plist */,
 				EA633F7E287BAD4800E5D023 /* SearchViewController.swift */,
 				EA633F80287BAD8500E5D023 /* FavoritesListViewController.swift */,
+				EA633F82287CE4A300E5D023 /* GHFButton.swift */,
+				EA633F84287CE85900E5D023 /* GHFTextField.swift */,
 			);
 			path = "GitHub-App";
 			sourceTree = "<group>";
@@ -140,7 +146,9 @@
 				EA633F7F287BAD4800E5D023 /* SearchViewController.swift in Sources */,
 				EA633F6B287BA63300E5D023 /* AppDelegate.swift in Sources */,
 				EA633F81287BAD8500E5D023 /* FavoritesListViewController.swift in Sources */,
+				EA633F83287CE4A300E5D023 /* GHFButton.swift in Sources */,
 				EA633F6D287BA63300E5D023 /* SceneDelegate.swift in Sources */,
+				EA633F85287CE85900E5D023 /* GHFTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
