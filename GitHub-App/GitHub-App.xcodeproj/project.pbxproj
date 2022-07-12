@@ -16,6 +16,8 @@
 		EA633F83287CE4A300E5D023 /* GHFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA633F82287CE4A300E5D023 /* GHFButton.swift */; };
 		EA633F85287CE85900E5D023 /* GHFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA633F84287CE85900E5D023 /* GHFTextField.swift */; };
 		EA633F87287D10C200E5D023 /* FollowerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA633F86287D10C100E5D023 /* FollowerListViewController.swift */; };
+		EAC78EB8287E2DF000D904FD /* GHFTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC78EB7287E2DF000D904FD /* GHFTitleLabel.swift */; };
+		EAC78EBA287E2FD000D904FD /* GHFBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC78EB9287E2FD000D904FD /* GHFBodyLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		EA633F82287CE4A300E5D023 /* GHFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHFButton.swift; sourceTree = "<group>"; };
 		EA633F84287CE85900E5D023 /* GHFTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHFTextField.swift; sourceTree = "<group>"; };
 		EA633F86287D10C100E5D023 /* FollowerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListViewController.swift; sourceTree = "<group>"; };
+		EAC78EB7287E2DF000D904FD /* GHFTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHFTitleLabel.swift; sourceTree = "<group>"; };
+		EAC78EB9287E2FD000D904FD /* GHFBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHFBodyLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 				EA633F82287CE4A300E5D023 /* GHFButton.swift */,
 				EA633F84287CE85900E5D023 /* GHFTextField.swift */,
 				EA633F86287D10C100E5D023 /* FollowerListViewController.swift */,
+				EAC78EB7287E2DF000D904FD /* GHFTitleLabel.swift */,
+				EAC78EB9287E2FD000D904FD /* GHFBodyLabel.swift */,
 			);
 			path = "GitHub-App";
 			sourceTree = "<group>";
@@ -151,6 +157,8 @@
 				EA633F81287BAD8500E5D023 /* FavoritesListViewController.swift in Sources */,
 				EA633F87287D10C200E5D023 /* FollowerListViewController.swift in Sources */,
 				EA633F83287CE4A300E5D023 /* GHFButton.swift in Sources */,
+				EAC78EB8287E2DF000D904FD /* GHFTitleLabel.swift in Sources */,
+				EAC78EBA287E2FD000D904FD /* GHFBodyLabel.swift in Sources */,
 				EA633F6D287BA63300E5D023 /* SceneDelegate.swift in Sources */,
 				EA633F85287CE85900E5D023 /* GHFTextField.swift in Sources */,
 			);
