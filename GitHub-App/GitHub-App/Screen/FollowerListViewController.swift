@@ -20,7 +20,7 @@ class FollowerListViewController: UIViewController {
     
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
@@ -52,12 +52,22 @@ class FollowerListViewController: UIViewController {
         NetworkManager.shared.getFollowers(for: userName, page: page) { [weak self] (result) in
             guard let self = self else { return }
             self.dismissLoadingView()
+            
             switch result {
             case .success(let followers):
                 if followers.count < 100 { self.hasMoreFollowers = false }
                 self.followers.append(contentsOf: followers)
+                
+                if self.followers.isEmpty {
+                    let message = "This user doesn't have any followers. Go follow them."
+                    
+                    DispatchQueue.main.async {
+                        self.showEmptyStateView(with: message, in: self.view)
+                    }
+                    return
+                }
                 self.updateData()
-            
+                
             case.failure(let error):
                 self.presenteGHFAlertOnMainThread(title: "Bad Stuff Happened", message: error.rawValue, buttonTitle: "Ok")
             }
