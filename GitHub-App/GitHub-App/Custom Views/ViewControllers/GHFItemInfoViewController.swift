@@ -18,7 +18,7 @@ class GHFItemInfoViewController: UIViewController {
         super.viewDidLoad()
         configureBackgroundView()
         layoutUI()
-        configureStackView(
+        configureStackView()
 
     }
     
