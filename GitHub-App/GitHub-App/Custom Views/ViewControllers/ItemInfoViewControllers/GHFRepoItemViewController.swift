@@ -21,6 +21,10 @@ class GHFRepoItemViewController: GHFItemInfoViewController {
         actionButton.set(backgroundColor: .systemPurple, title: "GitHub Profile")
     }
     
+    override func actionButtonTapped() {
+        delegate.didTapGitHubProfille(for: user)
+    }
+    
     
     
 }
