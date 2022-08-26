@@ -20,6 +20,7 @@
 		59E60F5228B19AB80063F0C0 /* GHFFollowerItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E60F5128B19AB80063F0C0 /* GHFFollowerItemViewController.swift */; };
 		59E60F5528B19D920063F0C0 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E60F5428B19D920063F0C0 /* Date+Ext.swift */; };
 		59E60F5728B19DD00063F0C0 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E60F5628B19DD00063F0C0 /* String+Ext.swift */; };
+		59F1F8BB28B7F3F000B27709 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F1F8BA28B7F3F000B27709 /* PersistenceManager.swift */; };
 		EA633F6B287BA63300E5D023 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA633F6A287BA63300E5D023 /* AppDelegate.swift */; };
 		EA633F6D287BA63300E5D023 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA633F6C287BA63300E5D023 /* SceneDelegate.swift */; };
 		EA633F74287BA63400E5D023 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA633F73287BA63400E5D023 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		59E60F5128B19AB80063F0C0 /* GHFFollowerItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHFFollowerItemViewController.swift; sourceTree = "<group>"; };
 		59E60F5428B19D920063F0C0 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		59E60F5628B19DD00063F0C0 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		59F1F8BA28B7F3F000B27709 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		EA633F67287BA63300E5D023 /* GitHub-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GitHub-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA633F6A287BA63300E5D023 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA633F6C287BA63300E5D023 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				EAC78EC92884C1F900D904FD /* NetworkManager.swift */,
+				59F1F8BA28B7F3F000B27709 /* PersistenceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				5910733B289FE7EE005BD7A2 /* GHFUserInfoHeadViewController.swift in Sources */,
 				59E60F4E28B195EC0063F0C0 /* GHFItemInfoViewController.swift in Sources */,
 				59E60F5528B19D920063F0C0 /* Date+Ext.swift in Sources */,
+				59F1F8BB28B7F3F000B27709 /* PersistenceManager.swift in Sources */,
 				EAC78ECA2884C1F900D904FD /* NetworkManager.swift in Sources */,
 				EAC78EBC287E314700D904FD /* GHFAlertViewController.swift in Sources */,
 				59E60F4C28B1902E0063F0C0 /* GHFItemInfoView.swift in Sources */,
