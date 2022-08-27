@@ -12,7 +12,6 @@ class GHFollowerItemViewController: GHFItemInfoViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureItems()
-        
     }
     
     private func configureItems() {
@@ -24,4 +23,5 @@ class GHFollowerItemViewController: GHFItemInfoViewController {
     override func actionButtonTapped() {
         delegate.didTapGetFollowers(for: user)
     }
+    
 }

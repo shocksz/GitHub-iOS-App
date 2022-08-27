@@ -32,7 +32,6 @@ class GHFItemInfoViewController: UIViewController {
         configureActionButton()
         layoutUI()
         configureStackView()
-
     }
     
     func configureBackgroundView() {

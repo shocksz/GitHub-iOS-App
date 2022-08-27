@@ -44,7 +44,6 @@ enum PersistenceManager {
             case .failure(let error):
                 completed(error)
             }
-            
         }
     }
     

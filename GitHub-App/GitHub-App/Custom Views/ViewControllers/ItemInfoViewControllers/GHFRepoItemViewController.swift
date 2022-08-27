@@ -12,7 +12,6 @@ class GHFRepoItemViewController: GHFItemInfoViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureItems()
-        
     }
     
     private func configureItems() {
@@ -24,7 +23,5 @@ class GHFRepoItemViewController: GHFItemInfoViewController {
     override func actionButtonTapped() {
         delegate.didTapGitHubProfille(for: user)
     }
-    
-    
     
 }

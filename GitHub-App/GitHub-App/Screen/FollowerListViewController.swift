@@ -127,6 +127,7 @@ extension FollowerListViewController: UICollectionViewDelegate {
             page += 1
             getFollowers(username: userName, page: page)
         }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -139,6 +140,7 @@ extension FollowerListViewController: UICollectionViewDelegate {
         let navigationController = UINavigationController(rootViewController: destinationViewController)
         present(navigationController, animated: true)
     }
+    
 }
 
 extension FollowerListViewController: UISearchResultsUpdating, UISearchBarDelegate {
@@ -154,6 +156,7 @@ extension FollowerListViewController: UISearchResultsUpdating, UISearchBarDelega
         isSearching = false
         updateData(on: followers)
     }
+    
 }
 
 extension FollowerListViewController: FollowerListViewControllerDelegate {
@@ -167,4 +170,5 @@ extension FollowerListViewController: FollowerListViewControllerDelegate {
         collectionView.setContentOffset(.zero, animated: true)
         getFollowers(username: username, page: page)
     }
+    
 }
