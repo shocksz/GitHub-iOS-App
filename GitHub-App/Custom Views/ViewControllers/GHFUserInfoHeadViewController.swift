@@ -29,13 +29,13 @@ class GHFUserInfoHeadViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSubivew()
+        addSubivews()
         layoutUI()
         configureUIElements()
     }
     
     func configureUIElements() {
-        avatarImageView.downloadImage(from: user.avatarUrl)
+        downloadAvatarImage()
         usernameLabel.text = user.login
         nameLabel.text = user.name ?? ""
         locationLabel.text = user.location ?? "No location"
@@ -45,8 +45,17 @@ class GHFUserInfoHeadViewController: UIViewController {
         locationImageView.image = UIImage(systemName: SFSymbols.location)
         locationImageView.tintColor = .secondaryLabel
     }
+        
+    func downloadAvatarImage() {
+        NetworkManager.shared.downloadImage(from: user.avatarUrl) { [weak self] Images in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.avatarImageView.image = Images
+            }
+        }
+    }
     
-    func addSubivew() {
+    func addSubivews() {
         view.addSubview(avatarImageView)
         view.addSubview(usernameLabel)
         view.addSubview(nameLabel)
