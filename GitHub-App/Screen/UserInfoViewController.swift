@@ -11,7 +11,7 @@ protocol UserInfoViewControllerDelegate: AnyObject {
     func didRequestFollowers(for username: String)
 }
 
-class UserInfoViewController: UIViewController {
+class UserInfoViewController: GHFDataLoadingViewController {
     let headerView = UIView()
     let itemViewOne = UIView()
     let itemViewTwo = UIView()
@@ -27,7 +27,6 @@ class UserInfoViewController: UIViewController {
         configureViewController()
         layoutUI()
         getUserInfo()
-        
     }
     
     func configureViewController() {
@@ -50,19 +49,11 @@ class UserInfoViewController: UIViewController {
     }
     
     func configureUIElements(with user: User) {
-        
-        let repoItemViewController = GHFRepoItemViewController(user: user)
-        repoItemViewController.delegate = self
-        
-        let followerItemViewController = GHFollowerItemViewController(user: user)
-        followerItemViewController.delegate = self
-        
-        self.add(childViewController: repoItemViewController, to: self.itemViewOne)
-        self.add(childViewController: followerItemViewController, to: self.itemViewTwo)
+        self.add(childViewController: GHFRepoItemViewController(user: user, delegate: self), to: self.itemViewOne)
+        self.add(childViewController: GHFollowerItemViewController(user: user, delegate: self), to: self.itemViewTwo)
         self.add(childViewController: GHFUserInfoHeadViewController(user: user), to: self.headerView)
         self.dateLabel.text = "GitHub since \(user.createdAt.convertToMonthYearformat())"
     }
-    
     
     func layoutUI() {
         let padding: CGFloat = 20
@@ -108,8 +99,7 @@ class UserInfoViewController: UIViewController {
 
 }
 
-extension UserInfoViewController: ItemInfoViewControllerDelegate {
-    
+extension UserInfoViewController: GFRepoItemViewControllerDelegate {
     func didTapGitHubProfille(for user: User) {
         guard let url = URL(string: user.htmlUrl) else {
             presenteGHFAlertOnMainThread(title: "Invalid URL", message: "The url attached to this user is invalid.", buttonTitle: "Ok")
@@ -117,13 +107,13 @@ extension UserInfoViewController: ItemInfoViewControllerDelegate {
         }
         
         presentSafariViewController(with: url)
-        
     }
-    
+}
+
+extension UserInfoViewController: GFFollowerItemViewControllerDelegate {
     func didTapGetFollowers(for user: User) {
         guard user.followers != 0 else {
             presenteGHFAlertOnMainThread(title: "No followers", message: "This user has no followers", buttonTitle: "Ok")
-            
             return
         }
         

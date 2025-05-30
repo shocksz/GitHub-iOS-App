@@ -20,7 +20,6 @@ class GHFItemInfoViewController: UIViewController {
     let actionButton = GHFButton()
     
     var user: User!
-    weak var delegate: ItemInfoViewControllerDelegate!
     
     init(user: User) {
         super.init(nibName: nil, bundle: nil)
