@@ -56,12 +56,12 @@ class GHFUserInfoHeadViewController: UIViewController {
     }
     
     func addSubivews() {
-        view.addSubview(avatarImageView)
-        view.addSubview(usernameLabel)
-        view.addSubview(nameLabel)
-        view.addSubview(locationImageView)
-        view.addSubview(locationLabel)
-        view.addSubview(bioLabel)
+        view.addSubviews(avatarImageView,
+                         usernameLabel,
+                         nameLabel,
+                         locationImageView,
+                         locationLabel,
+                         bioLabel)
     }
     
     func layoutUI() {
@@ -98,7 +98,7 @@ class GHFUserInfoHeadViewController: UIViewController {
             bioLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: textImagePadding),
             bioLabel.leadingAnchor.constraint(equalTo: avatarImageView.leadingAnchor),
             bioLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            bioLabel.heightAnchor.constraint(equalToConstant: 60 )
+            bioLabel.heightAnchor.constraint(equalToConstant: 90)
             
         ])
     }

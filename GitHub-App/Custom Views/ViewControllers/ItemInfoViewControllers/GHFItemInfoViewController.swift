@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol ItemInfoViewControllerDelegate: AnyObject {
+    func didTapGitHubProfille(for user: User)
+    func didTapGetFollowers(for user: User)
+}
+
 class GHFItemInfoViewController: UIViewController {
     
     let stackView = UIStackView()
@@ -15,7 +20,7 @@ class GHFItemInfoViewController: UIViewController {
     let actionButton = GHFButton()
     
     var user: User!
-    weak var delegate: UserInfoViewControllerDelegate!
+    weak var delegate: ItemInfoViewControllerDelegate!
     
     init(user: User) {
         super.init(nibName: nil, bundle: nil)
@@ -55,8 +60,7 @@ class GHFItemInfoViewController: UIViewController {
     func actionButtonTapped() { }
     
     private func layoutUI() {
-        view.addSubview(stackView)
-        view.addSubview(actionButton)
+        view.addSubviews(stackView, actionButton)
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         let padding:CGFloat = 20
