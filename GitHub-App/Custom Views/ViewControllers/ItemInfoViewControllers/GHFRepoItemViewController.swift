@@ -8,7 +8,7 @@
 import UIKit
 
 protocol GFRepoItemViewControllerDelegate: AnyObject {
-    func didTapGitHubProfille(for user: User)
+    func didTapGitHubProfile(for user: User)
 }
 
 class GHFRepoItemViewController: GHFItemInfoViewController {
@@ -36,7 +36,7 @@ class GHFRepoItemViewController: GHFItemInfoViewController {
     }
     
     override func actionButtonTapped() {
-        delegate.didTapGitHubProfille(for: user)
+        delegate.didTapGitHubProfile(for: user)
     }
     
 }

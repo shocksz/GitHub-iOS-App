@@ -12,28 +12,30 @@ protocol UserInfoViewControllerDelegate: AnyObject {
 }
 
 class UserInfoViewController: GHFDataLoadingViewController {
+    
     let scrollView = UIScrollView()
     let contentView = UIView()
+    
     let headerView = UIView()
     let itemViewOne = UIView()
     let itemViewTwo = UIView()
-    var itemViews: [UIView] = []
     let dateLabel = GHFBodyLabel(textAlignment: .center)
+    var itemViews: [UIView] = []
     
     var username: String!
     weak var delegate: UserInfoViewControllerDelegate!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureViewController()
+        configureScrollView()
         layoutUI()
         getUserInfo()
     }
     
     func configureViewController() {
         view.backgroundColor = .systemBackground
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissViewController))
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismssVC))
         navigationItem.rightBarButtonItem = doneButton
     }
     
@@ -56,6 +58,7 @@ class UserInfoViewController: GHFDataLoadingViewController {
             switch result {
             case .success(let user):
                 DispatchQueue.main.async { self.configureUIElements(with: user) }
+                
             case .failure(let error):
                 self.presenteGHFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
             }
@@ -63,10 +66,10 @@ class UserInfoViewController: GHFDataLoadingViewController {
     }
     
     func configureUIElements(with user: User) {
-        self.add(childViewController: GHFRepoItemViewController(user: user, delegate: self), to: self.itemViewOne)
-        self.add(childViewController: GHFollowerItemViewController(user: user, delegate: self), to: self.itemViewTwo)
-        self.add(childViewController: GHFUserInfoHeadViewController(user: user), to: self.headerView)
-        self.dateLabel.text = "GitHub since \(user.createdAt.convertToMonthYearformat())"
+        self.add(childVC: GHFRepoItemViewController(user: user, delegate: self), to: self.itemViewOne)
+        self.add(childVC: GHFollowerItemViewController(user: user, delegate: self), to: self.itemViewTwo)
+        self.add(childVC: GHFUserInfoHeadViewController(user: user), to: self.headerView)
+        self.dateLabel.text = "GitHub since \(user.createdAt.convertToMonthYearFormat())"
     }
     
     func layoutUI() {
@@ -100,38 +103,37 @@ class UserInfoViewController: GHFDataLoadingViewController {
         ])
     }
     
-    func add(childViewController: UIViewController, to containerView: UIView) {
-        addChild(childViewController)
-        containerView.addSubview(childViewController.view)
-        childViewController.view.frame = containerView.bounds
-        childViewController.didMove(toParent: self)
+    func add(childVC: UIViewController, to containerView: UIView) {
+        addChild(childVC)
+        containerView.addSubview(childVC.view)
+        childVC.view.frame = containerView.bounds
+        childVC.didMove(toParent: self)
     }
     
-    @objc func dismissViewController() {
+    @objc func dismssVC() {
         dismiss(animated: true)
     }
-
 }
 
 extension UserInfoViewController: GFRepoItemViewControllerDelegate {
-    func didTapGitHubProfille(for user: User) {
+    
+    func didTapGitHubProfile(for user: User) {
         guard let url = URL(string: user.htmlUrl) else {
             presenteGHFAlertOnMainThread(title: "Invalid URL", message: "The url attached to this user is invalid.", buttonTitle: "Ok")
             return
         }
-        
         presentSafariViewController(with: url)
     }
 }
 
 extension UserInfoViewController: GFFollowerItemViewControllerDelegate {
+    
     func didTapGetFollowers(for user: User) {
         guard user.followers != 0 else {
             presenteGHFAlertOnMainThread(title: "No followers", message: "This user has no followers", buttonTitle: "Ok")
             return
         }
-        
         delegate.didRequestFollowers(for: user.login)
-        dismissViewController()
+        dismssVC()
     }
 }
